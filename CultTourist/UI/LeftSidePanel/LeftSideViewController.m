@@ -78,6 +78,8 @@
 {
 	NSDictionary* selected = _menuItems[indexPath.row];
 	[[NavigationManager sharedInstance] showTab:[selected[@"type"] intValue] navigateToRoot:YES];
+	[[[NavigationManager sharedInstance] revealController] showViewController:[[NavigationManager sharedInstance] revealController].frontViewController];
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

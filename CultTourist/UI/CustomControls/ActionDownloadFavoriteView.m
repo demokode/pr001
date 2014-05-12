@@ -93,6 +93,7 @@
 }
 
 #pragma mark -
+//----------------------Methods which update buttons state----------------------------
 -(void)setDownloadState:(EControlState)state
 {
 	_currentDownloadState = state;
@@ -122,7 +123,7 @@
 }
 
 
-
+//--------------------------------------------------
 
 
 #pragma mark -

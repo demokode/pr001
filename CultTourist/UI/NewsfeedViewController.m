@@ -70,7 +70,7 @@
 			_compositionPopularControl.hidden = NO;
 			_compositionNewsControl.hidden = YES;
 			_compositionRecomendationControl.hidden = YES;
-			if(_compositionPopularControl.compositionList.count==0)
+			if(_compositionPopularControl.itemsList.count==0)
 			{
 				[[ServerApiHelper sharedServerApiHelper] requestPopulars:^(NSArray *middleCompositionInfos) {
 					[_compositionPopularControl setList:middleCompositionInfos];
@@ -84,7 +84,7 @@
 			_compositionPopularControl.hidden = YES;
 			_compositionNewsControl.hidden = NO;
 			_compositionRecomendationControl.hidden = YES;
-			if(_compositionNewsControl.compositionList.count==0)
+			if(_compositionNewsControl.itemsList.count==0)
 			{
 				[[ServerApiHelper sharedServerApiHelper] requestPopulars:^(NSArray *middleCompositionInfos) {
 					[_compositionNewsControl setList:middleCompositionInfos];
@@ -97,7 +97,7 @@
 			_compositionPopularControl.hidden = YES;
 			_compositionNewsControl.hidden = YES;
 			_compositionRecomendationControl.hidden = NO;
-			if(_compositionRecomendationControl.compositionList.count==0)
+			if(_compositionRecomendationControl.itemsList.count==0)
 			{
 				[[ServerApiHelper sharedServerApiHelper] requestPopulars:^(NSArray *middleCompositionInfos) {
 					[_compositionRecomendationControl setList:middleCompositionInfos];

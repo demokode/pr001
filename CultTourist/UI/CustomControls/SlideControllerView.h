@@ -30,21 +30,28 @@
 @property(nonatomic)BOOL isAllowActionPanel;
 @property(nonatomic)EActionPanelSide actionPanelSide;
 @property(nonatomic,assign)IBOutlet id<SlideControllerDelegate> delegate;
+
 @property(nonatomic,assign)IBOutlet UIView* actionPanel;
 @property(nonatomic,assign)IBOutlet UIView* rootView;
 #pragma mark -
 
 /**
- Hide action panel
+ Hide action panel without animation;
  */
 -(void)forceClose;
 
 /**
- Show action panel;
+ Show action panel without animation;;
  */
 -(void)forceOpen;
 
 
+/**
+ Show action panel with animation;;
+ */
 -(void)showActionPanel;
+/**
+ Hide action panel with animation;
+ */
 -(void)hideActionPanel;
 @end

@@ -20,17 +20,20 @@
 	@protected
 	BOOL _isAlreadyInitialize;
 }
-@property(nonatomic,readonly)NSArray* compositionList;
+/**
+Items in containers;
+ */
+@property(nonatomic,readonly)NSArray* itemsList;
 @property(nonatomic,assign)IBOutlet id<ListControlDelegate>  callback;
 /**
- Add composition in to end of list;
+ Add items in to end of list;
  */
 -(void)pushList:(NSArray*)compositions;
 /**
  */
 -(void)clearList;
 /**
- Replace exist composition with new list;
+ Replace exist items with new list;
  */
 -(void)setList:(NSArray*)compositions;
 

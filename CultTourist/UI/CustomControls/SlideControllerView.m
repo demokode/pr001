@@ -161,7 +161,7 @@
 		_isOpen = NO;
 		if (self.delegate && [self.delegate respondsToSelector:@selector(topViewWillHide:)])
 		{
-			[self.delegate topViewWillOpen:self];
+			[self.delegate topViewWillHide:self];
 		}
 		
 		

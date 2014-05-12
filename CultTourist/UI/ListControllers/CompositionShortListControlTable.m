@@ -1,15 +1,16 @@
 //
-//  CompositionListControlTable.m
+//  CompositionShortListControlTable.m
 //  CultTourist
 //
-//  Created by DimasSup on 10.05.14.
+//  Created by DimasSup on 13.05.14.
 //  Copyright (c) 2014 DimasSup. All rights reserved.
 //
 
-#import "CompositionListControlTable.h"
-#import "CompositionListTableCell.h"
-#import "ListItemCompositionContainer.h"
-@implementation CompositionListControlTable
+#import "CompositionShortListControlTable.h"
+#import "CompositionShortEntity.h"
+#import "CompositionShortContainer.h"
+#import "CompositionShortListTableCell.h"
+@implementation CompositionShortListControlTable
 @synthesize itemsList = _itemsList;
 - (id)initWithFrame:(CGRect)frame
 {
@@ -28,8 +29,8 @@
 	_tableView.separatorColor = [UIColor colorWithRed:39/255.0 green:145/255.0 blue:205/255.0 alpha:1];
 	
 	[self addSubview:_tableView];
-	UINib* nib = [UINib nibWithNibName:@"CompositionListTableCell" bundle:nil];
-	[_tableView registerNib:nib forCellReuseIdentifier:@"composition"];
+	UINib* nib = [UINib nibWithNibName:@"CompositionShortListTableCell" bundle:nil];
+	[_tableView registerNib:nib forCellReuseIdentifier:@"scomp"];
 	_itemsList = [NSMutableArray new];
 }
 -(void)layoutSubviews
@@ -42,16 +43,16 @@
 {
 	[_itemsList release];
 	NSMutableArray* temp = [NSMutableArray new];
-	for (CompositionMiddleEntity* composition in compositions)
+	for (CompositionShortEntity* composition in compositions)
 	{
-		ListItemCompositionContainer* listItemContainer = [ListItemCompositionContainer new];
+		CompositionShortContainer* listItemContainer = [CompositionShortContainer new];
 		listItemContainer.baseEntity = composition;
 		listItemContainer.downloadState = EControlState_On;
 		listItemContainer.favoriteState = EControlState_Off;
 		[temp addObject:listItemContainer];
 		[listItemContainer release];
 	}
-
+	
 	_itemsList = temp;
 	[_tableView reloadData];
 }
@@ -72,18 +73,18 @@
 {
 	if(self.callback && [self.callback respondsToSelector:@selector(onSelectItem:onList:)])
 	{
-		[self.callback onSelectItem:((ListItemContainerBase*)_itemsList[indexPath.row]).realEntity onList:self];
+		[self.callback onSelectItem:((CompositionShortContainer*)_itemsList[indexPath.row]).realEntity onList:self];
 	}
-	   
-	   
+	
+	
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	CompositionListTableCell* cell = [tableView dequeueReusableCellWithIdentifier:@"composition"];
+	ListItemContainerBase* container = [_itemsList objectAtIndex:indexPath.row];
+	CompositionShortListTableCell* cell = [tableView dequeueReusableCellWithIdentifier:container.identifier];
 	[cell.slideController forceClose];
-	[cell initializeWithItemContainer:[_itemsList objectAtIndex:indexPath.row]];
+	[cell initializeWithItemContainer:container];
 	return cell;
 }
-
 @end

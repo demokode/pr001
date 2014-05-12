@@ -13,6 +13,8 @@
 #import "CompositionEntity.h"
 #import "CompositionPartEntity.h"
 #import "CompositionPartTrackEntity.h"
+#import "AuthorEntity.h"
+#import "CompositionShortEntity.h"
 static ServerApiHelper *sharedServerApiHelperInstance = nil;
 
 
@@ -47,7 +49,8 @@ static ServerApiHelper *sharedServerApiHelperInstance = nil;
 	dispatch_async(dispatch_get_main_queue(), ^{
 		NSMutableArray* result = [NSMutableArray new];
 		for (int i = 0; i<30;i++ ) {
-			CompositionMiddleEntity* entity = [[CompositionMiddleEntity alloc] initWithRomoteId:i+1 name:[NSString stringWithFormat:@"Composition  - %i",i] authorName:@"UTHOR!" smallImageUrl:@""];
+			CompositionMiddleEntity* entity = [[CompositionMiddleEntity alloc] initWithRomoteId:i+1 name:[NSString stringWithFormat:@"Composition  - %i",i] authorName:@"А. С. Пушкин!" smallImageUrl:@""];
+			entity.authorRemoteId = 1;
 			[result addObject:entity];
 			[entity release];
 		}
@@ -63,7 +66,7 @@ static ServerApiHelper *sharedServerApiHelperInstance = nil;
 	dispatch_async(dispatch_get_main_queue(), ^{
 		CompositionEntity* entity = [[CompositionEntity alloc] initWithRemoteId:compositionId name:[NSString stringWithFormat:@"Composition - %li",compositionId-1]];
 		entity.authorRemoteId = 1;
-		entity.authorName = @"Пушкин";
+		entity.authorName = @"А. С. Пушкин";
 		entity.entityDescription = @"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat";
 		entity.normalImageUrl = @"";
 		NSMutableArray* parts = [NSMutableArray new];
@@ -101,7 +104,24 @@ static ServerApiHelper *sharedServerApiHelperInstance = nil;
 }
 
 
-
+-(int)requestAuthorById:(long)authorId success:(void (^)(AuthorEntity* middleCompositionInfo))success failed:(void (^)(NSError* error))failed
+{
+	dispatch_async(dispatch_get_main_queue(), ^{
+		NSMutableArray* compositions = [NSMutableArray new];
+		AuthorEntity* entity = [[AuthorEntity alloc] initWithRemoteId:authorId name:@"Александр" lastName:@"Пушкин" birthDate:[NSDate date] deathDate:[NSDate date] normalImageUrl:@"" description:@"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat\nAt vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat" compositionShorts:compositions];
+		
+		for (int  i = 0 ; i<10; i++)
+		{
+			CompositionShortEntity* entity = [[CompositionShortEntity alloc] initWithRemoteId:i name:[NSString stringWithFormat:@"Composition  - %i",i]];
+			[compositions addObject:entity];
+			[entity release];
+		}
+		[compositions release];
+		success(entity);
+		
+	});
+	return 0;
+}
 
 
 @end

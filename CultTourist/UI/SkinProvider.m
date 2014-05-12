@@ -102,6 +102,16 @@ static SkinProvider *sharedSkinProviderInstance = nil;
 	return _leftMenuIcon;
 }
 
+
+-(UIColor *)colorForAuthorBar
+{
+	return [UIColor colorWithRed:0.424 green:0.659 blue:0.851 alpha:1]; /*#6ca8d9*/
+}
+-(UIColor *)colorForCompositionBar
+{
+	return [UIColor colorWithRed:0.545 green:0.722 blue:0.894 alpha:1]; /*#8bb8e4*/
+}
+
 -(void)applyDefaultFontToLabel:(UILabel*)label size:(float)size
 {
 	label.font = [UIFont fontWithName:@"PT Sans" size:size];

@@ -17,6 +17,10 @@
 }
 @property(nonatomic,retain)IBOutlet SlideControllerView* slideController;
 @property(nonatomic,readonly)ListItemContainerBase* container;
+
+/**
+Reinitialize cell with data container;
+ */
 -(void)initializeWithItemContainer:(ListItemContainerBase*)container;
 -(ListItemContainerBase*)realItemContainer;
 #pragma mark -

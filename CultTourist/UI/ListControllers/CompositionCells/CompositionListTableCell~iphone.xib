@@ -54,7 +54,7 @@
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.15163093065693431" green="0.56862745100000001" blue="0.80392156859999997" alpha="0.0" colorSpace="calibratedRGB"/>
-            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="_actionPanel" destination="V3D-SM-iJ0" id="vLD-uV-PYT"/>
                 <outlet property="_descriptionLabel" destination="pu2-ye-4qJ" id="1sx-um-eHb"/>

@@ -42,6 +42,14 @@
 		844DE3491920203A00B1ADAE /* icon_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844DE3451920203A00B1ADAE /* icon_list@2x.png */; };
 		844DE34A1920203A00B1ADAE /* icon_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 844DE3461920203A00B1ADAE /* icon_menu.png */; };
 		844DE34B1920203A00B1ADAE /* icon_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844DE3471920203A00B1ADAE /* icon_menu@2x.png */; };
+		847CB74A19216DB900DAF27E /* AuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CB74819216DB900DAF27E /* AuthorViewController.m */; };
+		847CB74B19216DB900DAF27E /* AuthorViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847CB74919216DB900DAF27E /* AuthorViewController~iphone.xib */; };
+		847CB74D19217E4F00DAF27E /* arrow_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 847CB74C19217E4F00DAF27E /* arrow_small.png */; };
+		847CB74F19217E5600DAF27E /* arrow_small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 847CB74E19217E5600DAF27E /* arrow_small@2x.png */; };
+		847CB752192185E500DAF27E /* CompositionShortContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CB751192185E500DAF27E /* CompositionShortContainer.m */; };
+		847CB756192186C900DAF27E /* CompositionShortListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CB754192186C900DAF27E /* CompositionShortListTableCell.m */; };
+		847CB757192186C900DAF27E /* CompositionShortListTableCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 847CB755192186C900DAF27E /* CompositionShortListTableCell~iphone.xib */; };
+		847CB75A1921885200DAF27E /* CompositionShortListControlTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CB7591921885200DAF27E /* CompositionShortListControlTable.m */; };
 		848EAF19191E380C0000517D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 848EAEFB191E380C0000517D /* LICENSE */; };
 		848EAF1A191E380C0000517D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 848EAEFC191E380C0000517D /* README.md */; };
 		848EAF1B191E380C0000517D /* CAAnimation+PKIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 848EAF01191E380C0000517D /* CAAnimation+PKIdentifier.m */; };
@@ -154,6 +162,18 @@
 		844DE3451920203A00B1ADAE /* icon_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_list@2x.png"; sourceTree = "<group>"; };
 		844DE3461920203A00B1ADAE /* icon_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_menu.png; sourceTree = "<group>"; };
 		844DE3471920203A00B1ADAE /* icon_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_menu@2x.png"; sourceTree = "<group>"; };
+		847CB74719216DB900DAF27E /* AuthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorViewController.h; sourceTree = "<group>"; };
+		847CB74819216DB900DAF27E /* AuthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorViewController.m; sourceTree = "<group>"; };
+		847CB74919216DB900DAF27E /* AuthorViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "AuthorViewController~iphone.xib"; sourceTree = "<group>"; };
+		847CB74C19217E4F00DAF27E /* arrow_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_small.png; sourceTree = "<group>"; };
+		847CB74E19217E5600DAF27E /* arrow_small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_small@2x.png"; sourceTree = "<group>"; };
+		847CB750192185E500DAF27E /* CompositionShortContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositionShortContainer.h; sourceTree = "<group>"; };
+		847CB751192185E500DAF27E /* CompositionShortContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositionShortContainer.m; sourceTree = "<group>"; };
+		847CB753192186C900DAF27E /* CompositionShortListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositionShortListTableCell.h; sourceTree = "<group>"; };
+		847CB754192186C900DAF27E /* CompositionShortListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositionShortListTableCell.m; sourceTree = "<group>"; };
+		847CB755192186C900DAF27E /* CompositionShortListTableCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CompositionShortListTableCell~iphone.xib"; sourceTree = "<group>"; };
+		847CB7581921885200DAF27E /* CompositionShortListControlTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompositionShortListControlTable.h; sourceTree = "<group>"; };
+		847CB7591921885200DAF27E /* CompositionShortListControlTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompositionShortListControlTable.m; sourceTree = "<group>"; };
 		848EAEFB191E380C0000517D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		848EAEFC191E380C0000517D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		848EAF00191E380C0000517D /* CAAnimation+PKIdentifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+PKIdentifier.h"; sourceTree = "<group>"; };
@@ -342,6 +362,8 @@
 		84692209191D2D27005D29D1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				847CB74C19217E4F00DAF27E /* arrow_small.png */,
+				847CB74E19217E5600DAF27E /* arrow_small@2x.png */,
 				84B799E0191E6023000CBC8A /* CustomUI */,
 				844BF347191D5C9E00101783 /* LeftMenuIcons */,
 			);
@@ -362,6 +384,9 @@
 				844DE333191FD79A00B1ADAE /* CompositionInfoViewController.h */,
 				844DE334191FD79A00B1ADAE /* CompositionInfoViewController.m */,
 				844DE335191FD79A00B1ADAE /* CompositionInfoViewController~iphone.xib */,
+				847CB74719216DB900DAF27E /* AuthorViewController.h */,
+				847CB74819216DB900DAF27E /* AuthorViewController.m */,
+				847CB74919216DB900DAF27E /* AuthorViewController~iphone.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -528,6 +553,8 @@
 				84B799D4191E5AAE000CBC8A /* ListControlBase.m */,
 				84B799D6191E5C21000CBC8A /* CompositionListControlTable.h */,
 				84B799D7191E5C21000CBC8A /* CompositionListControlTable.m */,
+				847CB7581921885200DAF27E /* CompositionShortListControlTable.h */,
+				847CB7591921885200DAF27E /* CompositionShortListControlTable.m */,
 			);
 			path = ListControllers;
 			sourceTree = "<group>";
@@ -540,6 +567,9 @@
 				84B799DC191E5E7A000CBC8A /* CompositionListTableCell~iphone.xib */,
 				84B79A46191EE47C000CBC8A /* ListTableCellBase.h */,
 				84B79A47191EE47C000CBC8A /* ListTableCellBase.m */,
+				847CB753192186C900DAF27E /* CompositionShortListTableCell.h */,
+				847CB754192186C900DAF27E /* CompositionShortListTableCell.m */,
+				847CB755192186C900DAF27E /* CompositionShortListTableCell~iphone.xib */,
 			);
 			path = CompositionCells;
 			sourceTree = "<group>";
@@ -593,6 +623,8 @@
 				84B79A2A191EDE0D000CBC8A /* ListItemContainerBase.m */,
 				84B79A2C191EDE68000CBC8A /* ListItemCompositionContainer.h */,
 				84B79A2D191EDE68000CBC8A /* ListItemCompositionContainer.m */,
+				847CB750192185E500DAF27E /* CompositionShortContainer.h */,
+				847CB751192185E500DAF27E /* CompositionShortContainer.m */,
 			);
 			path = ListItemContainers;
 			sourceTree = "<group>";
@@ -718,13 +750,16 @@
 				84B799EB191E6023000CBC8A /* icon_download_normal.png in Resources */,
 				844BF36A191D5CA800101783 /* leftmenu_icon_settings.png in Resources */,
 				844BF2F0191D2F0400101783 /* LeftSideViewController~iphone.xib in Resources */,
+				847CB74F19217E5600DAF27E /* arrow_small@2x.png in Resources */,
 				84B799E9191E6023000CBC8A /* icon_download_activ.png in Resources */,
 				844BF35A191D5CA800101783 /* leftmenu_icon_bookmark.png in Resources */,
 				84B799EF191E6023000CBC8A /* icon_favorites_normal.png in Resources */,
 				844BF341191D38C800101783 /* NewsfeedViewController~iphone.xib in Resources */,
+				847CB74B19216DB900DAF27E /* AuthorViewController~iphone.xib in Resources */,
 				84B799EE191E6023000CBC8A /* icon_favorites_activ@2x.png in Resources */,
 				84B79A23191ED705000CBC8A /* image_composition_full@2x.png in Resources */,
 				84B79A25191ED705000CBC8A /* image_composition_player@2x.png in Resources */,
+				847CB74D19217E4F00DAF27E /* arrow_small.png in Resources */,
 				84B79A3D191EDFA4000CBC8A /* LICENSE.txt in Resources */,
 				844BF369191D5CA800101783 /* leftmenu_icon_search@2x.png in Resources */,
 				84B79A1F191ED705000CBC8A /* image_author_full@2x.png in Resources */,
@@ -752,6 +787,7 @@
 				844BF35C191D5CA800101783 /* leftmenu_icon_catalog.png in Resources */,
 				844BF365191D5CA800101783 /* leftmenu_icon_news@2x.png in Resources */,
 				844DE34B1920203A00B1ADAE /* icon_menu@2x.png in Resources */,
+				847CB757192186C900DAF27E /* CompositionShortListTableCell~iphone.xib in Resources */,
 				84B79A21191ED705000CBC8A /* image_author_small@2x.png in Resources */,
 				84B79A24191ED705000CBC8A /* image_composition_player.png in Resources */,
 				848EAF19191E380C0000517D /* LICENSE in Resources */,
@@ -811,8 +847,10 @@
 				844BF345191D3BA100101783 /* NavigationManager.m in Sources */,
 				84B79A48191EE47C000CBC8A /* ListTableCellBase.m in Sources */,
 				84FA2B82191D84E1000CFAFD /* CompositionPartTrackEntity.m in Sources */,
+				847CB74A19216DB900DAF27E /* AuthorViewController.m in Sources */,
 				84B79A43191EDFA4000CBC8A /* FMResultSet.m in Sources */,
 				84FA2B85191D8697000CFAFD /* CompositionEntity.m in Sources */,
+				847CB752192185E500DAF27E /* CompositionShortContainer.m in Sources */,
 				84FA2B7F191D8389000CFAFD /* CompositionPartEntity.m in Sources */,
 				84B79A2B191EDE0D000CBC8A /* ListItemContainerBase.m in Sources */,
 				84B79A42191EDFA4000CBC8A /* FMDatabaseQueue.m in Sources */,
@@ -822,6 +860,7 @@
 				84FA2B91191D8CC2000CFAFD /* CompositionShortEntity.m in Sources */,
 				84FA2B88191D87D2000CFAFD /* BaseEntity.m in Sources */,
 				8490E068191AD43600A95E09 /* main.m in Sources */,
+				847CB756192186C900DAF27E /* CompositionShortListTableCell.m in Sources */,
 				844DE3431920157200B1ADAE /* CustomViewController.m in Sources */,
 				848EAF1F191E380C0000517D /* PKRevealControllerView.m in Sources */,
 				84FA2B8E191D8B22000CFAFD /* AuthorEntity.m in Sources */,
@@ -832,6 +871,7 @@
 				84B799F3191E605F000CBC8A /* ActionDownloadFavoriteView.m in Sources */,
 				848EAF1C191E380C0000517D /* CALayer+PKConvenienceAnimations.m in Sources */,
 				84B79A40191EDFA4000CBC8A /* FMDatabaseAdditions.m in Sources */,
+				847CB75A1921885200DAF27E /* CompositionShortListControlTable.m in Sources */,
 				848EAF21191E380C0000517D /* PKLayerAnimator.m in Sources */,
 				848EAF1B191E380C0000517D /* CAAnimation+PKIdentifier.m in Sources */,
 				848EAF1D191E380C0000517D /* NSObject+PKBlocks.m in Sources */,

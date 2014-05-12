@@ -9,6 +9,7 @@
 #import "CompositionInfoViewController.h"
 #import "SkinProvider.h"
 #import "ServerApiHelper.h"
+#import "AuthorViewController.h"
 @interface CompositionInfoViewController ()
 
 @end
@@ -26,22 +27,12 @@
 
 - (void)viewDidLoad
 {
-	self.barColor =  [[SkinProvider sharedSkinProvider] colorForTab:ELeftSideMenuTypes_None];
+	self.barColor =  [[SkinProvider sharedSkinProvider] colorForCompositionBar];
 	self.titleColor = [[SkinProvider sharedSkinProvider] colorForTab:ELeftSideMenuTypes_History];
 	
     [super viewDidLoad];
 	
-	if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
-	{
-        // Load resources for iOS 6.1 or earlier
-    }
-	else
-	{
-        // Load resources for iOS 7 or later
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-        self.navigationController.navigationBar.translucent = NO;
-		self.navigationController.navigationBar.alpha = 1;
-    }
+
 	self.title = NSLocalizedString(@"Произведение", @"Произведение");
 	
 	
@@ -60,21 +51,29 @@
 	} failed:^(NSError *error) {
 		
 	}];
+	UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTapAuthorView:)];
+	[_authorRootView addGestureRecognizer:tapGesture];
+	[tapGesture release];
+	
     // Do any additional setup after loading the view from its nib.
 }
--(void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-	
-}
--(void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	//	UINavigationItem* item =  self.navigationController.navigationBar.backItem;
-	
-	
-}
+
 #pragma mark -
+-(void)topViewWillOpen:(SlideControllerView *)slideController
+{
+	_authorRootView.userInteractionEnabled = NO;
+}
+-(void)topViewWillHide:(SlideControllerView *)slideController
+{
+	_authorRootView.userInteractionEnabled = YES;
+}
+-(void)onTapAuthorView:(UITapGestureRecognizer*)gesture
+{
+	AuthorViewController* viewController = [[AuthorViewController alloc] initWithNibName:@"AuthorViewController" withAuthorId:_compositionMiddleEntity.authorRemoteId authorName:_compositionMiddleEntity.authorName];
+	[[self navigationController] pushViewController:viewController animated:YES];
+	[viewController release];
+	
+}
 
 -(void)onSegmentControlerStateChanged:(UISegmentedControl*)segmentControl
 {
@@ -105,11 +104,6 @@
 
 
 #pragma mark -
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 -(void)dealloc
 {
@@ -124,10 +118,12 @@
 	
 	[_subItemsView release];
 	[_partsList release];
-	
+	[_authorRootView release];
 	
 	[_compositionMiddleEntity release];
 	[_compositionFullyEntity release];
+	
+	
 	[super dealloc];
 }
 

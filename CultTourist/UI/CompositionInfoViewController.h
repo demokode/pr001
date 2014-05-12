@@ -26,6 +26,7 @@
 	IBOutlet UIView* _subItemsView;
 	IBOutlet ListControlBase* _partsList;
 
+	IBOutlet UIView* _authorRootView;
 	
 	CompositionMiddleEntity* _compositionMiddleEntity;
 	CompositionEntity* _compositionFullyEntity;

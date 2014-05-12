@@ -1,21 +1,20 @@
 //
-//  CompositionListTableCell.m
+//  CompositionShortListTableCell.m
 //  CultTourist
 //
-//  Created by DimasSup on 10.05.14.
+//  Created by DimasSup on 13.05.14.
 //  Copyright (c) 2014 DimasSup. All rights reserved.
 //
 
-#import "CompositionListTableCell.h"
+#import "CompositionShortListTableCell.h"
 #import "SkinProvider.h"
-@implementation CompositionListTableCell
+@implementation CompositionShortListTableCell
+#pragma mark - Initialization logic
 
 - (void)awakeFromNib
 {
-	
-	self.selectionStyle = UITableViewCellSelectionStyleNone;
+  	self.selectionStyle = UITableViewCellSelectionStyleNone;
 	[[SkinProvider sharedSkinProvider] applyDefaultFontToLabel:_titleLabel size:18];
-	[[SkinProvider sharedSkinProvider] applyDefaultFontToLabel:_descriptionLabel size:13];
 	
 	
  	[_actionPanel setDownloadState:EControlState_On];
@@ -23,25 +22,21 @@
 	self.slideController.actionPanelSide = EActionPanelSide_Left;
 	[super awakeFromNib];
 }
--(ListItemCompositionContainer *)realItemContainer
-{
-	return (ListItemCompositionContainer*)_container;
-}
-
-
--(void)initializeWithItemContainer:(ListItemCompositionContainer *)container
+-(void)initializeWithItemContainer:(CompositionShortContainer *)container
 {
 	[super initializeWithItemContainer:container];
 	
 	_titleLabel.text = container.realEntity.name;
-	_descriptionLabel.text = container.realEntity.authorName;
 	[_actionPanel setDownloadState:container.downloadState];
 	[_actionPanel setFavoriteState:container.favoriteState];
-
-	
 }
 
-#pragma mark - Action panel delegate
+-(CompositionShortContainer *)realItemContainer
+{
+	return (CompositionShortContainer*)_container;
+}
+
+#pragma mark - Implement action panel avent (add to favorite/download)
 -(BOOL)onDownloadClicked:(ActionDownloadFavoriteView *)view
 {
 	[self realItemContainer].downloadState = EControlState_On;
@@ -54,16 +49,15 @@
 	
 	return YES;
 }
+
 #pragma mark -
 
 -(void)dealloc
 {
-	[_actionPanel release];
-	[_mainView release];
-	[_titleLabel release];
-	[_descriptionLabel release];
-	[_iconImage release];
 
+	[_actionPanel release];
+	[_titleLabel release];
+	
 	[super dealloc];
 }
 

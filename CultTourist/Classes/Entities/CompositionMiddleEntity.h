@@ -14,5 +14,6 @@
 }
 @property (nonatomic, retain) NSString *authorName;
 @property (nonatomic, retain) NSString *smallImageUrl;
+@property (nonatomic) long authorRemoteId;
 - (id)initWithRomoteId:(long)aRomoteId name:(NSString*)aName authorName:(NSString*)anAuthorName smallImageUrl:(NSString*)aSmallImageUrl;
 @end

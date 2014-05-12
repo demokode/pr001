@@ -34,5 +34,6 @@
 -(UIFont*)fontWithSize:(float)size;
 
 -(UIColor*)colorForTab:(ELeftSideMenuTypes)tab;
-
+-(UIColor*)colorForAuthorBar;
+-(UIColor*)colorForCompositionBar;
 @end
